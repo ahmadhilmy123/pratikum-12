@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        select {
+            margin-left: 50vh;
+        }
+
+        .container{
+            margin-left: 60vh;
+            margin-top: 40px;
+            
+        }
+
+        img{
+            height: 50vh;
+            width: 50vh;
+            border: 5px solid black;
+        }
+    </style>
+
+    <script>
+        function image_picker(){
+            const list_gambar = ["panda.jpg","zebra.jpg","singa.jpg"];
+            let pilihan = document.getElementById("option").value
+
+            if (pilihan == "panda"){
+                let select = list_gambar[0];
+                document.getElementById("gambar").src = `images/${select}`;
+            }
+
+            if (pilihan == "zebra"){
+                let select = list_gambar[1];
+                document.getElementById("gambar").src = `images/${select}`;
+            }
+
+            if (pilihan == "singa"){
+                let select = list_gambar[2];
+                document.getElementById("gambar").src = `images/${select}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+<center><h1>Image Picker</h1></center>
+
+<select name="" id="option" onchange="image_picker()">
+    <option value="panda">Panda</option>
+    <option value="zebra">Zebra</option>
+    <option value="singa">Singa</option>
+</select>
+ 
+ <div class="container">
+    <img id="gambar">
+ </div>
+</body>
+</html>
